@@ -26,6 +26,26 @@ Main loop is as follows:
 *  After work is done client (implicitly) returns connection to a pool
 *  Pool check whether transaction associated with connection is commited, if not - rollback the transaction
 
+Build
+-----
+
+Use cmake to build, `libpq` and `gtest` are required. 
+
+	cd /path/to/pq-richquery
+	cd ..
+	mkdir pq-richquery-build
+	cmake -DDEBUG=yes ../pq-richquery
+	make
+	ctest
+
+Also there is a couple of functional tests, one should costumize connection properties in all of these.
+
+Library was tested under Ubuntu 13.10x64. Library is platform specific in part of converting postgre binary data representations in a platform data formats.
+
+
+More documentation
+------------------
+
 See in-code documentation for details on how to extend query data getters and costumize pool actions.
 
 
